@@ -1,3 +1,10 @@
+"""
+This can be run as is. It generates the complete "AppIcon.appiconset" folder. 
+After this program finishes running, simply drag this folder into your project directory.
+Make sure to remove the old one (with the same name––"AppIcon.appiconset").
+The folder will be created in the directory of the image that you use.
+"""
+
 import PIL
 import sys
 import os
