@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+    A 'burger menu' `UIButton` that toggles between the opened and closed states. 
+*/
 class BMButton: UIButton {
     
     /// Whether `self` is currently in the open or closed state
