@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+    A `UITextField` that looks and acts similarly to Google's text fields. 
+*/
 class ATextField: UITextField, UITextFieldDelegate {
     
     /// The label containing the placeholder text.
