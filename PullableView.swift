@@ -93,3 +93,7 @@ class PullableView: UIView {
         }
     }
 }
+
+struct Keys {
+    static let isPullable = "isPullable"
+}
