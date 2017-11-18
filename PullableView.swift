@@ -31,7 +31,7 @@ class PullableView: UIView {
         `pullFactor` should be greater than 1. The default `pullFactor` is 4.
      */
     public var pullFactor: CGFloat = 4
-    /// Values closer to 0 means less oscillation for the animation. The default damping is 0.5.
+    /// Values closer to 1 means less oscillation for the animation. The default damping is 0.5.
     public var damping = 0.5
     /// If the view can be pulled.
     public var isPullable: Bool {
@@ -87,7 +87,7 @@ class PullableView: UIView {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if isPullable {
-            UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.allowUserInteraction, animations: {
+            UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: damping, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.allowUserInteraction, animations: {
                 self.center = self.initCenter
             }, completion: nil)
         }
