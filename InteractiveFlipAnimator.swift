@@ -226,15 +226,11 @@ class InteractiveFlipAnimator: NSObject {
             if angle < -CGFloat.pi / 2 {
                 // Move to -pi/2 and then change zPosition
                 let flipToHalfPiAnimator = UIViewPropertyAnimator(duration: Double(totalDuration - flipTo0Duration), curve: .linear) {
-                    var transform1 = CATransform3DIdentity
-                    transform1.m34 = 1 / -500
-                    transform1 = CATransform3DRotate(transform1, -CGFloat.pi / 2, 0, 1, 0)
-                    self.v1.layer.transform = transform1
-                    
-                    var transform2 = CATransform3DIdentity
-                    transform2.m34 = 1 / -500
-                    transform2 = CATransform3DRotate(transform2, -CGFloat.pi / 2, 0, 1, 0)
-                    self.v2.layer.transform = transform2
+                    var transform = CATransform3DIdentity
+                    transform.m34 = 1 / -500
+                    transform = CATransform3DRotate(transform, -CGFloat.pi / 2, 0, 1, 0)
+                    self.v1.layer.transform = transform
+                    self.v2.layer.transform = transform
                     
                     self.v1Cover.alpha = 0.5
                     self.v2Cover.alpha = 0
