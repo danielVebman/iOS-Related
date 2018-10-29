@@ -158,15 +158,11 @@ class InteractiveFlipAnimator: NSObject {
             let flipToPiDuration = (angle > -CGFloat.pi / 2) ? (totalDuration - (angle + CGFloat.pi / 2) * totalDuration / CGFloat.pi) : totalDuration
             
             let flipToPiAnimator = UIViewPropertyAnimator(duration: Double(flipToPiDuration), curve: .linear, animations: {
-                var transform1 = CATransform3DIdentity
-                transform1.m34 = 1 / -500
-                transform1 = CATransform3DRotate(transform1, -CGFloat.pi, 0, 1, 0)
-                self.v1.layer.transform = transform1
-                
-                var transform2 = CATransform3DIdentity
-                transform2.m34 = 1 / -500
-                transform2 = CATransform3DRotate(transform2, -CGFloat.pi, 0, 1, 0)
-                self.v2.layer.transform = transform2
+                var transform = CATransform3DIdentity
+                transform.m34 = 1 / -500
+                transform = CATransform3DRotate(transform, -CGFloat.pi, 0, 1, 0)
+                self.v1.layer.transform = transform
+                self.v2.layer.transform = transform
                 
                 self.v1Cover.alpha = 0
                 self.v2Cover.alpha = 0.5
