@@ -105,15 +105,11 @@ class InteractiveFlipAnimator: NSObject {
             return
         }
         
-        var transform1 = CATransform3DIdentity
-        transform1.m34 = 1 / -500
-        transform1 = CATransform3DRotate(transform1, angle, 0, 1, 0)
-        self.v1.layer.transform = transform1
-        
-        var transform2 = CATransform3DIdentity
-        transform2.m34 = 1 / -500
-        transform2 = CATransform3DRotate(transform2, angle, 0, 1, 0)
-        self.v2.layer.transform = transform2
+        var transform = CATransform3DIdentity
+        transform.m34 = 1 / -500
+        transform = CATransform3DRotate(transform, angle, 0, 1, 0)
+        self.v1.layer.transform = transform
+        self.v2.layer.transform = transform
         
         if startAngle == 0 {
             self.v1Cover.alpha = 1 - abs(x / view.frame.width)
