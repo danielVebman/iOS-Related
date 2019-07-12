@@ -22,11 +22,11 @@ class SectionedSlider: UIView {
         didSet { updateColors() }
     }
     
-    var selectedColor: UIColor = .blue {
+    var selectedColor: UIColor = .white {
         didSet { updateColors() }
     }
     
-    var deselectedColor: UIColor = .darkGray {
+    var deselectedColor: UIColor = .gray {
         didSet { updateColors() }
     }
     
